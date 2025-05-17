@@ -46,7 +46,7 @@ El proceso de reparto tendrá que se reevaluado si el coeficiente de variación 
 La empresa de reparto quiere programar visitas aleatorias de supervisores para observar el desempeño de los repartidores sin que estos lo anticipen.
 
 Para hacerlo, deciden que el tiempo que transcurre entre el inicio de una entrega y la visita sorpresa se genere aleatoriamente y de forma uniforme continua entre 15 y 35 minutos, de modo que:
-$$f(x)=I_{[15,35]}(x)$$
+$$f(x)=\frac{1}{20}I_{[15,35]}(x)$$
 
 ## Ejercicio 2.1
 

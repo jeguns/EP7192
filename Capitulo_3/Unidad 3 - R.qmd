@@ -1,0 +1,73 @@
+---
+title: "Unidad 3: Variable aletoria"
+author: "Mg. J. Eduardo Gamboa U."
+format: 
+  pdf:
+    toc: true
+    toc-depth: 2  
+editor: visual
+---
+
+\newpage
+
+
+# Ejercicio 1
+
+Una empresa de reparto quiere analizar el desempeño de sus repartidores durante una jornada de trabajo para identificar oportunidades de mejora. Sea $X$ la variable aleatoria que representa el número de entregas completadas por un repartidor en un día.
+
+![](fdp.jpg){fig-align="center" width="450"}
+
+## Ejercicio 1.1
+
+¿Cuál es la probabilidad de que se realicen no menos de 12 entregas en un día?
+
+## Ejercicio 1.2
+
+Si se sabe que ya se realizaron al menos 11 entregas, ¿cuál es la probabilidad de que se realicen 15 entregas?
+
+## Ejercicio 1.3
+
+¿Cuál es la media, mediana y moda de la cantidad de entregas completadas por repartidor?
+
+## Ejercicio 1.4
+
+Si se sabe que ya se realizaron al menos 12 entregas, ¿cuál es la cantidad esperada de entregas completadas?
+
+## Ejercicio 1.5
+
+Cuando se realizan entre 10 y 11 entregas, la probabilidad de demora es de 0.2, mientras que si se realizan 12, 13 o 14 entregas, esta probabilidad es 0.25. Finalmente, cuando se realizan 15 entregas, la probabilidad de demora es 0.30. ¿Cuál es la probabilidad total de demora?
+
+## Ejercicio 1.6
+
+El proceso de reparto tendrá que se reevaluado si el coeficiente de variación supera el 10%. ¿Qué decisión deberá tomarse?
+
+# Ejercicio 2
+
+La empresa de reparto quiere programar visitas aleatorias de supervisores para observar el desempeño de los repartidores sin que estos lo anticipen.
+
+Para hacerlo, deciden que el tiempo que transcurre entre el inicio de una entrega y la visita sorpresa se genere aleatoriamente y de forma uniforme continua entre 15 y 35 minutos, de modo que:
+$$f(x)=I_{[15,35]}(x)$$
+
+## Ejercicio 2.1
+
+¿Cuál es la probabilidad de que el supervisor llegue antes de los 25 minutos?
+
+## Ejercicio 2.2
+
+¿Cuál es la probabilidad de que llegue entre los 20 y 30 minutos?
+
+## Ejercicio 2.3
+
+Si ya ha transcurrido 20 minutos, ¿cuál es la probabilidad de que el tiempo sea como máximo de media hora?
+
+## Ejercicio 2.4
+
+¿Cuál es el tiempo esperado hasta la visita sorpresa?
+
+## Ejercicio 2.5
+
+¿Cuál es la mediana del tiempo hasta la visita sorpresa?
+
+## Ejercicio 2.6
+
+Hallar el coeficiente de variación del tiempo que transcurre entre el inicio de una entrega y la visita sorpresa.

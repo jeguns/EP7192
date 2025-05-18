@@ -1,5 +1,5 @@
 ---
-title: "Unidad 3: Variable aletoria"
+title: "Unidad 3: Variable aleatoria"
 author: "Mg. J. Eduardo Gamboa U."
 format: 
   pdf:
@@ -10,64 +10,215 @@ editor: visual
 
 \newpage
 
-
 # Ejercicio 1
 
 Una empresa de reparto quiere analizar el desempeño de sus repartidores durante una jornada de trabajo para identificar oportunidades de mejora. Sea $X$ la variable aleatoria que representa el número de entregas completadas por un repartidor en un día.
 
 ![](fdp.jpg){fig-align="center" width="450"}
 
+![](images/clipboard-3146745335.png){width="400"}
+
 ## Ejercicio 1.1
 
 ¿Cuál es la probabilidad de que se realicen no menos de 12 entregas en un día?
+
+$$
+P(X\geq12)=f(12)+f(13)+f(14)+f(15)=0.26+0.24+0.14+0.10=0.74
+$$
 
 ## Ejercicio 1.2
 
 Si se sabe que ya se realizaron al menos 11 entregas, ¿cuál es la probabilidad de que se realicen 15 entregas?
 
+$$
+P(X=15|X\geq11)=\frac{P(X=15)}{P(X\geq11)}=\frac{f(15)}{1-f(10)}=\frac{0.10}{0.90}=\frac{1}{9}
+$$
+
 ## Ejercicio 1.3
 
 ¿Cuál es la media, mediana y moda de la cantidad de entregas completadas por repartidor?
+
+**Media**
+
+$$
+E(X)=10\times0.10+11\times0.16+12\times0.26+13\times0.24+14\times0.14+15\times0.10 = 12.46
+$$
+
+```{r}
+x = 10:15
+fx = c(0.10, 0.16, 0.26, 0.24, 0.14, 0.10)
+sum(x*fx)
+```
+
+El número promedio (o esperado) de entregas completadas por día se encuentra entre 12 y 13.
+
+**Mediana**
+
+La mediana es de 12 entregas completadas por día, es decir al menos el 50% de los días se realizan 12 o menos entregas.
+
+$$P(X\leq12)=f(10)+f(11)+f(12)=0.10+0.16+0.26=0.52$$
+
+**Moda**
+
+La moda es de 12 entregas completadas por día, ya que es el valor con mayor probabilidad de ocurrencia.
 
 ## Ejercicio 1.4
 
 Si se sabe que ya se realizaron al menos 12 entregas, ¿cuál es la cantidad esperada de entregas completadas?
 
+La probabilidad de que se hayan realizado al menos 12 entregas en un día es: $$
+P(X\geq12)=f(12)+f(13)+f(14)+f(15)=0.26+0.24+0.14+0.10=0.74
+$$ $$P(X=12|X\geq12)=\frac{P(X=12)}{P(X\geq12)}=\frac{0.26}{0.74}=0.351$$ $$P(X=13|X\geq12)=\frac{P(X=13)}{P(X\geq12)}=\frac{0.24}{0.74}=0.324$$ $$P(X=14|X\geq12)=\frac{P(X=14)}{P(X\geq12)}=\frac{0.14}{0.74}=0.189$$ $$P(X=15|X\geq12)=\frac{P(X=15)}{P(X\geq12)}=\frac{0.10}{0.74}=0.135$$ $$E(X|X\geq12)=12\times0.351 + 13\times0.324 + 14\times0.189 + 15\times0.135=13.095$$
+
+```{r}
+x = 12:15
+fx = c(0.351, 0.324, 0.189, 0.135)
+sum(x*fx)
+```
+
+Si se sabe que en un día ya se realizaron al menos 12 entregas, se espera obtener aproximadamente 13 (promedio o valor esperado condicional).
+
 ## Ejercicio 1.5
 
 Cuando se realizan entre 10 y 11 entregas, la probabilidad de demora es de 0.2, mientras que si se realizan 12, 13 o 14 entregas, esta probabilidad es 0.25. Finalmente, cuando se realizan 15 entregas, la probabilidad de demora es 0.30. ¿Cuál es la probabilidad total de demora?
+
+A = {Se realizan 10 u 11 entregas}
+
+B = {Se realizan 12, 13 o 14 entregas}
+
+C = {Se realizan 15 entregas}
+
+D = {Existe demora}
+
+$P(D|A)=0.20$
+
+$P(D|B)=0.25$
+
+$P(D|C)=0.30$
+
+![](images/clipboard-610870349.png)
+
+$P(A)=P(X=10)+P(X=11)=0.10+0.16=0.26$
+
+$P(B)=P(X=12)+P(X=13)+P(X=14)=0.26 + 0.24 + 0.14 = 0.64$
+
+$P(C)=P(X=15)=0.10$
+
+$P(D)=0.26\times0.20+0.64\times0.25+0.10\times0.30=0.242$
+
+La probabilidad total (sin desagregar por cada situación) de demora es 0.242
 
 ## Ejercicio 1.6
 
 El proceso de reparto tendrá que se reevaluado si el coeficiente de variación supera el 10%. ¿Qué decisión deberá tomarse?
 
+$$
+E(X)=10\times0.10+11\times0.16+12\times0.26+13\times0.24+14\times0.14+15\times0.10 = 12.46 \text{ entregas}
+$$
+
+```{r}
+x = 10:15
+fx = c(0.10, 0.16, 0.26, 0.24, 0.14, 0.10)
+sum(x*fx)
+```
+
+$$
+E(X^2)=10^2\times0.10+11^2\times0.16+12^2\times0.26+13^2\times0.24+14^2\times0.14+15^2\times0.10 = 157.3
+$$
+
+```{r}
+x = 10:15
+fx = c(0.10, 0.16, 0.26, 0.24, 0.14, 0.10)
+sum(x^2*fx)
+```
+
+$$V(X)=E(X^2)-(E(X))^2=157.3-12.46^2=2.0484 \text{ entregas}^2$$
+
+$$\sigma_x = \sqrt{2.0484} = 1.4312 \text{ minutos}$$
+
+```{r}
+sqrt(157.3 - 12.46^2)
+```
+
+$$CV_x=\frac{1.4312}{12.46}\times100\% = 11.486\%$$
+
+```{r}
+1.4312/12.46*100
+```
+
+Por lo tanto, el proceso sí deberá ser reevaluado, puesto que el CV supera el umbral del 10%.
+
 # Ejercicio 2
 
 La empresa de reparto quiere programar visitas aleatorias de supervisores para observar el desempeño de los repartidores sin que estos lo anticipen.
 
-Para hacerlo, deciden que el tiempo que transcurre entre el inicio de una entrega y la visita sorpresa se genere aleatoriamente y de forma uniforme continua entre 15 y 35 minutos, de modo que:
-$$f(x)=\frac{1}{20}I_{[15,35]}(x)$$
+Para hacerlo, deciden que el tiempo que transcurre entre el inicio de una entrega y la visita sorpresa se genere aleatoriamente y de forma uniforme continua entre 15 y 35 minutos, de modo que: $$f(x)=\frac{1}{20}I_{[15,35]}(x)$$
 
 ## Ejercicio 2.1
 
 ¿Cuál es la probabilidad de que el supervisor llegue antes de los 25 minutos?
 
+$$P(X<25)=\int_{15}^{25}{\frac{1}{20}dx}=0.50$$
+
+```{r}
+fx = function(x){x^0/20}
+integrate(fx, 15, 25)$value
+```
+
 ## Ejercicio 2.2
 
 ¿Cuál es la probabilidad de que llegue entre los 20 y 30 minutos?
+
+$$P(20<X<30)=\int_{20}^{30}{\frac{1}{20}dx}=0.50$$
+
+```{r}
+fx = function(x){x^0/20}
+integrate(fx, 20, 30)$value
+```
 
 ## Ejercicio 2.3
 
 Si ya ha transcurrido 20 minutos, ¿cuál es la probabilidad de que el tiempo sea como máximo de media hora?
 
+$$P(X\leq30|X\geq20)=\frac{P(20\leq X \leq 30)}{P(X\geq20)}=\frac{\int_{20}^{30}{\frac{1}{20}dx}}{\int_{20}^{35}{\frac{1}{20}dx}}=\frac{0.5}{0.75}=0.667$$
+
+```{r}
+fx = function(x){x^0/20}
+(num = integrate(fx, 20, 30)$value)
+(den = integrate(fx, 20, 35)$value)
+num/den
+```
+
+![](images/clipboard-1640039069.png){fig-align="center" width="450"}
+
 ## Ejercicio 2.4
 
 ¿Cuál es el tiempo esperado hasta la visita sorpresa?
+
+$$E(X)= \int_{R_x}{x\times f(x)dx}=25$$
+
+```{r}
+Ex = function(x){x*1/20}
+(media <- integrate(Ex, 15, 35)$value)
+```
+Se espera que el tiempo que transcurre entre el inicio de la entrega y la visita sorpresa sea de 25 minutos.
+
+El tiempo promedio que transcurre entre el inicio de la entrega y la visita sorpresa sea de 25 minutos.
 
 ## Ejercicio 2.5
 
 ¿Cuál es la mediana del tiempo hasta la visita sorpresa?
 
+La mediana es 25 porque $P(X\leq25)=0.5$ (revisar ejercicio 2.1)
+
 ## Ejercicio 2.6
 
 Hallar el coeficiente de variación del tiempo que transcurre entre el inicio de una entrega y la visita sorpresa.
+
+```{r}
+Ex2 = function(x){x^2*1/20} # Función para hallar el E(X^2)
+(espx2 <- integrate(Ex2, 15, 35)$value) # Hallando la integral de E(X^2)
+(Vx = espx2 - media^2) # varianza = E(X^2) - E(X)^2
+(CV = sqrt(Vx)/media*100) # coeficiente de variación = desv/media*100
+```
+El coeficiente de variación es de 23.09%

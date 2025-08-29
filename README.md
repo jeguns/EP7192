@@ -19,8 +19,9 @@ El curso de Métodos Estadísticos y Simulación pertenece al área de formació
 El horario regular del curso es domingo de 9 a.m a 2 p.m. Sin embargo, se realizarán ligeras modificaciones que serán anunciadas con anticipación.
 
 **Evaluaciones:**
-- 3 evaluaciones (70%)
-- Presentación de trabajo final con entregables durante el ciclo (20%)
+- 3 evaluaciones prácticas (30%)
+- 2 evaluaciones conceptuales (10%)
+- Presentación de trabajo final con entregable durante el ciclo (10%)
 - Asistencia y participación (10%)
 
 

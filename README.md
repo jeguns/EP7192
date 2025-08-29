@@ -16,7 +16,7 @@ El curso de Métodos Estadísticos y Simulación pertenece al área de formació
 7. Pruebas No Paramétricas. 
 
 **Horario:**
-El horario regular del curso es domingo de 9 a.m a 2 p.m. Sin embargo, se realizarán ligeras modificaciones que serán anunciadas con anticipación.
+El horario regular del curso es domingo de 9 a.m a 2 p.m. De ser necesarias, se realizarán ligeras modificaciones que serán anunciadas con anticipación.
 
 **Evaluaciones:**
 - 3 evaluaciones prácticas (30%)
